@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowListener;
 
-public class login_signUp extends Login implements ActionListener{
+public class login_signUp extends Login {
     Label lblTitle = new Label("RUPP M6");
     Button btnLogin = new Button(" Login ");
     Button btnRegister = new Button(" Register ");
@@ -16,7 +16,8 @@ public class login_signUp extends Login implements ActionListener{
         setResizable(false);
         setTitle("Login or Register Form");
         setLocationRelativeTo(null);
-        lblTitle.setBounds(20,50,70,20);
+        lblTitle.setBounds(100,50,100,20);
+        lblTitle.setFont(new Font("Arial",Font.BOLD, 20));
         add(lblTitle);
         btnLogin.setBounds(10 , 100 ,70 , 20);
         add(btnLogin);
@@ -36,22 +37,25 @@ public class login_signUp extends Login implements ActionListener{
 
 }
     public void actionPerformed(ActionEvent er){
-        int x = 0;
         if (er.getSource() == btnLogin){
-            dispose();
-          new Login();
+            Login Login = new Login();
+            Login.addAll();
+            while (!Login.back) {
+                setVisible(false);
+            }
+
+            setVisible(true);
 
         }
         if(er.getSource() == btnRegister){
 //            System.exit(0);
             JOptionPane.showMessageDialog(null,"Choose Register");
-
         }
         if(er.getSource() == btnExit){
             System.exit(0);
 
         }
-
+        JOptionPane.showMessageDialog(null , "hello");
     }
 
 
