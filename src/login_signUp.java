@@ -9,7 +9,7 @@ public class login_signUp extends Login implements ActionListener{
     Button btnLogin = new Button(" Login ");
     Button btnRegister = new Button(" Register ");
     Button btnExit = new Button(" Exit ");
-    login_signUp(){
+    public login_signUp(){
         setSize(300 , 350);
         setVisible(true);
         setLayout(null);
@@ -27,16 +27,20 @@ public class login_signUp extends Login implements ActionListener{
         btnLogin.addActionListener(this);
         btnRegister.addActionListener(this);
         btnExit.addActionListener(this);
-
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
 
 }
     public void actionPerformed(ActionEvent er){
+        int x = 0;
         if (er.getSource() == btnLogin){
-            setVisible(false);
-            new Login();
+            dispose();
+          new Login();
 
-
-            JOptionPane.showMessageDialog(null,"Choose Login");
         }
         if(er.getSource() == btnRegister){
 //            System.exit(0);
@@ -45,6 +49,7 @@ public class login_signUp extends Login implements ActionListener{
         }
         if(er.getSource() == btnExit){
             System.exit(0);
+
         }
 
     }
