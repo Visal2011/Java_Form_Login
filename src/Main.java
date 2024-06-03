@@ -6,14 +6,6 @@ import java.awt.event.WindowEvent;
 public class Main extends login_signUp{
     Main(){
         new login_signUp();
-
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                super.windowClosing(e);
-            }
-        });
-
     }
     public static void main(String[] args) {
         new Main();
