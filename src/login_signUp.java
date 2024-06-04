@@ -37,30 +37,88 @@ public class login_signUp extends Frame  {
     Button btnExit = new Button(" Exit ");
     int i = 0;
 
-    public void First_Form(){
-        remove(btnBack);
+    public void addAll(){
+        add(lblTitle);
+        add(lblLogin);
+        add(lblRegister);
+        add(lblUsername);
+        add(lblPassword);
+        add(lblFirstName);
+        add(lblLastName);
+        add(lblGender);
+        add(lblDoB);
+        add(lblPhone);
+        add(lblEmail);
+        add(txtUsername);
+        add(txtPassword);
+        add(txtF_name);
+        add(txtL_name);
+        add(txtDoB);
+        add(txtPhone);
+        add(txtEmail);
+        add(btnLogin);
+        add(btnLogin1);
+        add(btnRegister);
+        add(btnRegister1);
+        add(btnBack);
+        add(btnBack1);
+        add(btnNext);
+        add(btnExit);
+    }
+    public void removeAlls(){
+        remove(lblTitle);
         remove(lblLogin);
+        remove(lblRegister);
         remove(lblUsername);
         remove(lblPassword);
+        remove(lblFirstName);
+        remove(lblLastName);
         remove(lblGender);
         remove(lblDoB);
         remove(lblPhone);
         remove(lblEmail);
         remove(txtUsername);
         remove(txtPassword);
-        remove(chGender);
+        remove(txtF_name);
+        remove(txtL_name);
         remove(txtDoB);
         remove(txtPhone);
         remove(txtEmail);
-        remove(btnLogin1);
-        remove(btnRegister1);
         remove(btnLogin);
-        remove(txtF_name);
-        remove(txtL_name);
-        remove(lblFirstName);
-        remove(lblLastName);
-        remove(lblRegister);
+        remove(btnLogin1);
+        remove(btnRegister);
+        remove(btnRegister1);
+        remove(btnBack);
+        remove(btnBack1);
+        remove(btnNext);
+        remove(btnExit);
+    }
 
+    public void First_Form(){
+//        remove(btnBack);
+//        remove(lblLogin);
+//        remove(lblUsername);
+//        remove(lblPassword);
+//        remove(lblGender);
+//        remove(lblDoB);
+//        remove(lblPhone);
+//        remove(lblEmail);
+//        remove(txtUsername);
+//        remove(txtPassword);
+//        remove(chGender);
+//        remove(txtDoB);
+//        remove(txtPhone);
+//        remove(txtEmail);
+//        remove(btnLogin1);
+//        remove(btnRegister1);
+//        remove(btnLogin);
+//        remove(txtF_name);
+//        remove(txtL_name);
+//        remove(lblFirstName);
+//        remove(lblLastName);
+//        remove(lblRegister);
+//
+        removeAlls();
         setSize(300 , 350);
         setVisible(true);
         setLayout(null);
@@ -126,7 +184,7 @@ public class login_signUp extends Frame  {
         btnExit.setBounds(300, 220, 70, 20);
 
         add(btnBack);
-//        add(btnExit);
+        add(btnExit);
         add(btnLogin1);
         btnLogin1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -160,6 +218,7 @@ public class login_signUp extends Frame  {
         add(txtL_name);
         lblGender.setBounds(50 ,180 , 100 , 20);
         add(lblGender);
+        chGender.removeAll();
         chGender.setBounds(170  , 180 , 200 , 20);
         chGender.add("Male");
         chGender.add("Female");
@@ -187,89 +246,5 @@ public class login_signUp extends Frame  {
                 First_Form();
             }
         });
-
     }
-
-//public void addAll(){
-//    setSize(300 , 350);
-//    setVisible(true);
-//    setLayout(null);
-//    setResizable(false);
-//    setTitle("Login or Register Form");
-//    setLocationRelativeTo(null);
-//    lblTitle.setBounds(100,50,100,20);
-//    lblTitle.setFont(new Font("Arial",Font.BOLD, 20));
-////        add(lblTitle);
-//    btnLogin.setBounds(10 , 100 ,70 , 20);
-////        add(btnLogin);
-//    btnRegister.setBounds(90 , 100 , 70 , 20);
-////        add(btnRegister);
-//    btnExit.setBounds(190 , 100 , 70 , 20);
-////        add(btnExit);
-//    btnLogin.addActionListener(this);
-//    btnRegister.addActionListener(this);
-//    btnExit.addActionListener(this);
-//    addWindowListener(new WindowAdapter() {
-//        @Override
-//        public void windowClosing(WindowEvent e) {
-//            System.exit(0);
-//        }
-//    });
-//    add(btnLogin);
-//    add(btnRegister);
-//    add(btnExit);
-//    add(lblTitle);
-//
-//}
-
-
-//    public void actionPerformed(ActionEvent er){
-//        if (er.getSource() == btnLogin){
-
-
-
-
-
-
-
-
-
-
-
-
-//            public void actionPerformed(ActionEvent er){
-//                if (er.getSource() == btnLogin) {
-//
-//
-//                    JOptionPane.showMessageDialog(null, "Choose Login");
-//                }
-//                if (er.getSource() == btnBack) {
-//                    back = true;
-//                    setVisible(false);
-//                    JOptionPane.showMessageDialog(null, "Choose Back");
-//
-//                }
-//                if (er.getSource() == btnExit) {
-//                    System.exit(0);
-//
-//                }
-//            }
-//        }
-//        if(er.getSource() == btnRegister){
-//            btnregister = true;
-////            System.exit(0);
-//            JOptionPane.showMessageDialog(null,btnregister);
-//        }
-//        if(er.getSource() == btnExit){
-//            System.exit(0);
-//
-//        }
-//        JOptionPane.showMessageDialog(null , "hello");
-//    }
-
-
-
-
-
-
 }
