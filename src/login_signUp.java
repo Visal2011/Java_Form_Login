@@ -316,13 +316,23 @@ public class login_signUp extends JFrame {
         removeAlls();
         setSize(500 , 400);
         JLabel icon = new JLabel("Profile");
-
-        icon.setBounds(10,10 , 100 , 100);
+        JLabel line = new JLabel();
+        icon.setBounds(10,10 , 100 , 125);
         icon.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         icon.setBackground(new Color(0, 0, 0 , 0));
         icon.setHorizontalAlignment(SwingConstants.CENTER);
         icon.setVerticalAlignment(SwingConstants.CENTER);
         add(icon);
-
+        lblFirstName.setBounds(130 , 20 , 70 , 20);
+        add(lblFirstName);
+        lblLastName.setBounds(130 , 50 , 70 ,20);
+        add(lblLastName);
+        lblGender.setBounds(130 , 80 , 70 , 20);
+        add(lblGender);
+        lblPhone.setBounds(130,110 , 70 , 20);
+        add(lblPhone);
+        line.setBounds(249 , 150 , 2 , 200);
+        line.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        add(line);
     }
 }
