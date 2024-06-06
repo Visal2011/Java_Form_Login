@@ -18,11 +18,17 @@ public class login_signUp extends JFrame {
     Label lblPassword = new Label("Password : ");
     Label lblConfirm_Pass = new Label("Confirm Password : ");
     Label lblFirstName = new Label("First Name : ");
-    Label lblLastName = new Label("Last Name : ");
+    Label lblLastName = new Label("Last Name :  ");
     Label lblGender = new Label("Gender : ");
     Label lblDoB = new Label("Date of Birth : ");
     Label lblPhone = new Label("Phone : ");
     Label lblEmail = new Label("E-mail : ");
+    JLabel lblShowF_Name = new JLabel();
+    JLabel lblShowL_Name = new JLabel();
+    JLabel lblShowGender = new JLabel();
+    JLabel lblShowPhone = new JLabel();
+    JLabel lblSemester1 = new JLabel("Semester 1");
+    JLabel lblSemester2 = new JLabel("Semester 2");
     TextField txtUsername = new TextField();
     TextField txtPassword = new TextField();
     TextField txtConfirm_Pass = new TextField();
@@ -91,6 +97,12 @@ public class login_signUp extends JFrame {
         remove(lblDoB);
         remove(lblPhone);
         remove(lblEmail);
+        remove(lblShowF_Name);
+        remove(lblShowL_Name);
+        remove(lblShowGender);
+        remove(lblShowPhone);
+        remove(lblSemester1);
+        remove(lblSemester2);
         remove(txtUsername);
         remove(txtPassword);
         remove(txtConfirm_Pass);
@@ -313,6 +325,7 @@ public class login_signUp extends JFrame {
     }
 
     public void profile(){
+//        String name = "Visal 11";
         removeAlls();
         setSize(500 , 400);
         JLabel icon = new JLabel("Profile");
@@ -325,12 +338,30 @@ public class login_signUp extends JFrame {
         add(icon);
         lblFirstName.setBounds(130 , 20 , 70 , 20);
         add(lblFirstName);
+        lblShowF_Name.setBounds(220 , 20 , 70 , 20);
+        lblShowF_Name.setText("Chan Visal");
+        add(lblShowF_Name);
         lblLastName.setBounds(130 , 50 , 70 ,20);
         add(lblLastName);
+        lblShowL_Name.setBounds(220 , 50 , 70 , 20);
+        lblShowL_Name.setText("Yang");
+        add(lblShowL_Name);
         lblGender.setBounds(130 , 80 , 70 , 20);
         add(lblGender);
+        lblShowGender.setBounds(220 , 80  , 70 ,20 );
+        lblShowGender.setText("Male");
+        add(lblShowGender);
         lblPhone.setBounds(130,110 , 70 , 20);
         add(lblPhone);
+        lblShowPhone.setBounds(220 , 110 , 70 , 20);
+        lblShowPhone.setText("0123456789");
+        add(lblShowPhone);
+        lblSemester1.setBounds(90 , 160 , 70 , 20);
+        add(lblSemester1);
+        lblSemester2.setBounds(330 , 160  , 70 , 20);
+        add(lblSemester2);
+
+
         line.setBounds(249 , 150 , 2 , 200);
         line.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         add(line);
