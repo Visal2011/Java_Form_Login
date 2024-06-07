@@ -8,7 +8,7 @@ public class Main extends login_signUp{
     public static void main(String[] args) throws InterruptedException {
          login_signUp log = new login_signUp();
          log.First_Form();
-//         log.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
     }
 }
