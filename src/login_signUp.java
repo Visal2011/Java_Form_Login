@@ -10,10 +10,6 @@ import java.util.jar.JarEntry;
 
 public class login_signUp extends JFrame {
 
-    Label lbltest = new Label("Test ");
-    Label lbltest1 = new Label("Test ");
-    Label lbltest2 = new Label("Test ");
-    Label lbltest3 = new Label("Test ");
     Label lblTitle = new Label("RUPP M6");
     Label lblLogin = new Label("Login Form");
     Label lblRegister = new Label("Register Form");
