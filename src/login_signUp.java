@@ -73,7 +73,7 @@ public class login_signUp extends JFrame {
     Button btnExit = new Button(" Exit ");
     int i = 0;
 
-//    String F_name , L_Name , Username , password , ;
+    String F_name , L_Name , gender , phone ,  Username , password  ;
 
 
     public void addAll(){
@@ -179,7 +179,7 @@ public class login_signUp extends JFrame {
         setVisible(true);
         setLayout(null);
         setResizable(false);
-        setTitle("Login or Register Form");
+        setTitle("Home");
         setLocationRelativeTo(null);
         lblTitle.setBounds(100,50,100,20);
         lblTitle.setFont(new Font("Arial",Font.BOLD, 20));
@@ -237,10 +237,12 @@ public class login_signUp extends JFrame {
         lblUsername.setBounds(30, 100, 100, 20);
         add(lblUsername);
         txtUsername.setBounds(150, 100, 200, 20);
+        txtUsername.setText("");
         add(txtUsername);
         lblPassword.setBounds(30, 140, 100, 20);
         add(lblPassword);
         txtPassword.setBounds(150, 140, 200, 20);
+        txtPassword.setText("");
         add(txtPassword);
         btnBack.setBounds(30, 200, 70, 20);
         btnLogin1.setBounds(120, 200, 70, 20);
@@ -251,7 +253,18 @@ public class login_signUp extends JFrame {
         add(btnLogin1);
         btnLogin1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-               profile();
+                if(Username == null || password== null ){
+                    JOptionPane.showMessageDialog(null , "No User has been added");
+                }else if(Objects.equals(txtUsername.getText(), "") || Objects.equals(txtPassword.getText(), "")) {
+                    JOptionPane.showMessageDialog(null, "Please Input Username and Password to Login");
+
+                }else if (txtUsername.getText().equals(Username) && txtPassword.getText().equals(password)) {
+                     profile();
+                }
+                else {
+                    JOptionPane.showMessageDialog(null , "Wrong Username or Password");
+                }
+//
             }
         });
         btnBack.addActionListener(new ActionListener() {
@@ -317,8 +330,17 @@ public class login_signUp extends JFrame {
         btnNext.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(i == 1) {
-                    confirm_from();
-                    i++;
+                    if(txtF_name.getText().isEmpty() || txtL_name.getText().isEmpty() || txtDoB.getText().isEmpty() || txtEmail.getText().isEmpty() || txtPhone .getText().isEmpty()){
+                        JOptionPane.showMessageDialog(null , "Please Input all the information");
+                    }
+                    else {
+                        F_name = txtF_name.getText();
+                        L_Name = txtL_name.getText();
+                        phone = txtPhone.getText();
+                        gender = chGender.getSelectedItem();
+                        confirm_from();
+                        i++;
+                    }
                 }
             }
         });
@@ -326,6 +348,7 @@ public class login_signUp extends JFrame {
     public void confirm_from(){
         removeAlls();
         setSize(400 , 280);
+        setTitle("Confirmation Form");
         lblConfrim.setBounds(100, 20, 250, 30);
         lblConfrim.setFont(new Font("Arial", Font.BOLD, 20));
         add(lblConfrim);
@@ -351,13 +374,24 @@ public class login_signUp extends JFrame {
         btnRegister1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(i == 2) {
-                    JOptionPane.showConfirmDialog(null, "Register Successfully  ",
-                            "Confirmation Form",
-                            JOptionPane.DEFAULT_OPTION,
-                            JOptionPane.PLAIN_MESSAGE);
+                    if (txtUsername.getText().isEmpty() || txtPassword.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Input Username and Password To Confirm Your Registration");
+                    } else if (txtConfirm_Pass.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Please Confirm Your Password");
+                    } else if (!txtConfirm_Pass.getText().equals(txtPassword.getText())) {
+                        JOptionPane.showMessageDialog(null , "Your password doesn't match");
+                    }
+                    else {
+                        Username = txtUsername.getText();
+                        password = txtPassword.getText();
+                        JOptionPane.showConfirmDialog(null, "Register Successfully  ",
+                                "Confirmation Form",
+                                JOptionPane.DEFAULT_OPTION,
+                                JOptionPane.PLAIN_MESSAGE);
 //                    JOptionPane.showMessageDialog(null , "Your are successfully register your new account");
-                    First_Form();
-                    i-=2;
+                        First_Form();
+                        i -= 2;
+                    }
                 }
             }
         });
@@ -373,9 +407,10 @@ public class login_signUp extends JFrame {
     }
 
     public void profile(){
-//        String name = "Visal 11";
+
         removeAlls();
         setSize(500 , 400);
+        setTitle("Profile");
         JLabel icon = new JLabel("Profile");
         JLabel line = new JLabel();
         icon.setBounds(10,10 , 100 , 125);
@@ -387,22 +422,22 @@ public class login_signUp extends JFrame {
         lblFirstName.setBounds(170 , 20 , 70 , 20);
         add(lblFirstName);
         lblShowF_Name.setBounds(260 , 20 , 70 , 20);
-        lblShowF_Name.setText("Chan Visal");
+        lblShowF_Name.setText(F_name);
         add(lblShowF_Name);
         lblLastName.setBounds(170 , 50 , 70 ,20);
         add(lblLastName);
         lblShowL_Name.setBounds(260 , 50 , 70 , 20);
-        lblShowL_Name.setText("Yang");
+        lblShowL_Name.setText(L_Name);
         add(lblShowL_Name);
         lblGender.setBounds(170 , 80 , 70 , 20);
         add(lblGender);
         lblShowGender.setBounds(260 , 80  , 70 ,20 );
-        lblShowGender.setText("Male");
+        lblShowGender.setText(gender);
         add(lblShowGender);
         lblPhone.setBounds(170,110 , 70 , 20);
         add(lblPhone);
-        lblShowPhone.setBounds(260 , 110 , 70 , 20);
-        lblShowPhone.setText("0123456789");
+        lblShowPhone.setBounds(260 , 110 , 120 , 20);
+        lblShowPhone.setText(phone);
         add(lblShowPhone);
         lblSemester1.setBounds(90 , 160 , 70 , 20);
         add(lblSemester1);
