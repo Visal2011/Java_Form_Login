@@ -29,6 +29,8 @@ public class login_signUp extends JFrame {
     JLabel lblShowPhone = new JLabel();
     JLabel lblSemester1 = new JLabel("Semester 1");
     JLabel lblSemester2 = new JLabel("Semester 2");
+    JLabel Subject1 = new JLabel("Subject ");
+    JLabel Subject2 = new JLabel("Subject ");
     TextField txtUsername = new TextField();
     TextField txtPassword = new TextField();
     TextField txtConfirm_Pass = new TextField();
